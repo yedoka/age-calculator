@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-color: var(--white);
+  width: 50%;
+  height: 70%;
+  padding: 3em;
+  border-radius: 1em;
+  border-bottom-right-radius: 10em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 2em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input > label {
+  color: var(--smokey-grey);
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input > input {
+  border: 1px solid var(--light-grey);
+  border-radius: 0.5em;
+  padding: 0.8em;
+  font-size: 1.5em;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--off-black);
+}
+
+.input > input:focus {
+  outline: none;
+  border: 1px solid var(--purple);
+}
+
+.line-arrow {
+  display: flex;
+  align-items: center;
+  margin: 1em 0;
+  width: 100%;
+}
+
+.line {
+  height: 2px;
+  width: 95%;
+  background-color: var(--light-grey);
+}
+
+.arrow {
+  display: flex;
+  background-color: var(--purple);
+  border-radius: 50%;
+  padding: 1.2em;
+  border: none;
+  cursor: pointer;
+}
+.arrow:hover {
+  background-color: var(--off-black);
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  font-size: 5em;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.number-years,
+.number-months,
+.number-days {
+  color: var(--purple);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  .inputs {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .input {
+    width: 30%;
+    margin-right: 0;
+    font-size: 0.8em;
+  }
+  .line-arrow {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 4em 0;
+  }
+  .line {
+    width: 100%;
+    height: 2px;
+  }
+  .arrow {
+    margin-left: 0;
+    position: absolute;
+  }
+
+  img {
+    height: 30px;
+    width: 30px;
+  }
+  .output {
+    font-size: 3em;
+  }
+}
+
+.error-day,
+.error-month,
+.error-year {
+  color: var(--light-red);
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+.error-input {
+  color: var(--light-red);
+  border: 1px solid var(--light-red);
+}
